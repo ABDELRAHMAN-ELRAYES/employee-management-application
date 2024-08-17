@@ -4,8 +4,7 @@ public class ExecutiveEmployee extends SalariedEmployee {
         super(SSN,id,name,phone,email,dept,salary);
         this.bonus=bonus;
     }
-    public void payroll(){
-        double totalSalary  = this.salary+this.bonus;
-        System.out.println("your salary is : "+totalSalary);
+    public double payroll(){
+        return this.salary+this.bonus;
     }
 }

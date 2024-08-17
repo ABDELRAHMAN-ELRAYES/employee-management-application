@@ -7,8 +7,11 @@ public class HourlyEmployee extends Employee {
         this.workedHours=workedHours;
         this.rate=rate;
     }
-    public void payroll(){
-        double totalPayroll  = workedHours*rate;
-        System.out.println("your Salary is : "+totalPayroll);
+    public double payroll(){
+        return this.workedHours*rate;
+    }
+    public void addHours(int hours){
+        this.workedHours+=hours;
+        System.out.println("The additional woked hours is added ,successfully");
     }
 }

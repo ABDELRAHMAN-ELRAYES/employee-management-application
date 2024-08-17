@@ -5,8 +5,8 @@ public class SalariedEmployee extends Employee {
         super(SSN,id,name,phone,email,dept);
         this.salary=salary;
     }
-    public void payroll(){
-        System.out.println("your salary is : "+this.salary);
+    public double payroll(){
+        return this.salary;
     }
 
 

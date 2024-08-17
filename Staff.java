@@ -69,6 +69,7 @@ public class Staff {
             }
         }
     }
+    // delete a member 
     public void deleteMember(StaffMember member){
         stafMembers.remove(member);
         System.out.println("This member deleted successfully!");
@@ -81,6 +82,10 @@ public class Staff {
     }
     // this must return the total salary for all employees
     public void callPayroll(){
-
+        long totalSalary = 0;
+        for(StaffMember member:stafMembers){
+            totalSalary += member.payroll();
+        }
+        System.out.println("The total salary of all employees :  "+totalSalary);
     }
 }

@@ -1,4 +1,4 @@
-public  class StaffMember {
+public abstract  class StaffMember {
     protected int employeeID;
     protected String name;
     protected String phone;
@@ -26,8 +26,5 @@ public  class StaffMember {
     public String viewStaffMemberInfo(){
         return "This is a staff member with ID "+ this.employeeID+" and his name is "+this.name+" who have phone : "+this.phone+" and Email : "+this.email;
     }
-    public void payroll(){}
-    // public double pay(){
-    //     return
-    // }
+    public abstract double payroll();
 }

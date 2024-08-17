@@ -4,4 +4,7 @@ public class CommissionEmployee extends Employee {
         super(SSN,id,name,phone,email,dept);
         this.target=target;
     }
+    public double payroll(){
+        return this.target*(0.05);
+    }
 }
