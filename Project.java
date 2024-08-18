@@ -3,8 +3,15 @@ public class Project {
     private int projectID;
     private String location;
     private double currentCost;
-    private  Employee manager;
+    private  StaffMember manager;
     private ArrayList<Budget>budgetList = new ArrayList<>();
+
+    Project(int id ,String location,double cost ,StaffMember manager){
+        this.projectID=id;
+        this.location=location;
+        this.currentCost=cost;
+        this.manager= manager;
+    }
     // view project information
     public void viewProject(){
         System.out.println("This project with ID "+this.projectID+" and located in "+this.location+" and the cost on this project is "+this.currentCost+" and the manager who responsible of it is "+this.manager.viewStaffMemberInfo());

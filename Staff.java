@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.naming.spi.StateFactory;
 public class Staff {
     Scanner scanner = new Scanner(System.in);
     private ArrayList<StaffMember>stafMembers= new ArrayList<>();
@@ -70,9 +72,21 @@ public class Staff {
         }
     }
     // delete a member 
-    public void deleteMember(StaffMember member){
-        stafMembers.remove(member);
-        System.out.println("This member deleted successfully!");
+    public void deleteMember(int employeeID){
+        boolean checkFound = false;
+        for(StaffMember staffMember : stafMembers){
+            if(staffMember.getId() == employeeID){
+                stafMembers.remove(staffMember);
+                checkFound= true;
+                break;
+            }
+        }
+        if(checkFound){
+            System.out.println("This member deleted successfully!");
+        }else{
+
+            System.out.println("Sorry,Member ID is not found,Try Again!.");
+        }
     }
     // show each employee info in proper format
     public void viewAll(){
@@ -87,5 +101,14 @@ public class Staff {
             totalSalary += member.payroll();
         }
         System.out.println("The total salary of all employees :  "+totalSalary);
+    }
+    // search for specific staff member with id 
+    public StaffMember searchFoStaffMember(int id){
+        for(StaffMember staffMember : stafMembers){
+            if(staffMember.employeeID == id){
+                return staffMember;
+            }
+        }
+        return null;
     }
 }

@@ -23,6 +23,9 @@ public abstract  class StaffMember {
     public void setDept(Department dept){
         this.dept=dept;
     }
+    public int getId(){
+        return this.employeeID;
+    }
     public String viewStaffMemberInfo(){
         return "This is a staff member with ID "+ this.employeeID+" and his name is "+this.name+" who have phone : "+this.phone+" and Email : "+this.email;
     }
